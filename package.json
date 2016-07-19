@@ -14,5 +14,21 @@
   "bugs": {
     "url": "https://github.com/chuross/ReactRssReader/issues"
   },
-  "homepage": "https://github.com/chuross/ReactRssReader#readme"
+  "homepage": "https://github.com/chuross/ReactRssReader#readme",
+  "babel": {
+    "presets": [
+      "es2015"
+    ]
+  },
+  "devDependencies": {
+    "babel": "^6.5.2",
+    "babel-preset-es2015": "^6.9.0",
+    "bower": "^1.7.9",
+    "browser-sync": "^2.13.0",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^3.1.0",
+    "gulp-sass": "^2.3.2",
+    "require-dir": "^0.3.0",
+    "run-sequence": "^1.2.2"
+  }
 }
