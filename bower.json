@@ -1,0 +1,22 @@
+{
+  "name": "react_rss_reader",
+  "description": "React.jsで作った適当なRSSリーダー",
+  "main": "",
+  "authors": [
+    "chuross"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/chuross/ReactRssReader",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "react-router": "^2.6.0",
+    "react": "^15.2.1",
+    "bootstrap-sass": "bootstrap-sass-official#^3.3.6"
+  }
+}
