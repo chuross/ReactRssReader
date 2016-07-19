@@ -1,7 +1,7 @@
 export default {
   common: {
     srcDir: './src',
-    cssBuildDir: './build/css',
+    cssBuildDir: './public/css',
     jsBuildDir: './build/js'
   },
   browserify: {

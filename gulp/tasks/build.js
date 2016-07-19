@@ -7,7 +7,6 @@ requireDir('./');
 
 gulp.task('build', () => {
   return runSequence([
-    'compile:bootstrap',
-    'browserify'
+    'compile:bootstrap'
   ]);
 });
