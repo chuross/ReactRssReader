@@ -1,9 +1,13 @@
 export default {
   common: {
-    srcDirPath: 'src'
+    srcDir: './src',
+    cssBuildDir: './build/css',
+    jsBuildDir: './build/js'
+  },
+  browserify: {
+    bundleName: 'bundle.js'
   },
   bower: {
-    dirPath: './bower_components',
-    buildPath: './build/css'
+    dir: './bower_components'
   }
 };
