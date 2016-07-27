@@ -1,9 +1,12 @@
 import React, { Component } from 'react'
+import Header from 'view/component/Header'
 
 export default class Top extends Component {
   render() {
     return (
-      <h1>Hello world!</h1>
+      <div>
+        <Header />
+      </div>
     );
   }
 }

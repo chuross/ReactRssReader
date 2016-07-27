@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { Router, Route, browserHistory } from 'react-router'
-import Top from './Top'
+import Top from 'view/page/Top'
 
 export default class Root extends Component {
     render() {
