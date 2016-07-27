@@ -8,7 +8,7 @@ import config from '../config'
 
 gulp.task('bundle:js', () => {
   browserify(config.browserify.root)
-    .transform(babelify, { presets: ['react'] })
+    .transform(babelify, { presets: ['es2015', 'react'] })
     .bundle()
     .on('error', notify.onError((error) => `${error.message}`))
     .pipe(plumber())
