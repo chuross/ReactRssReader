@@ -5,8 +5,9 @@ import config from '../config'
 
 requireDir('./');
 
-gulp.task('build', () => {
-  return runSequence([
-    'compile:bootstrap'
-  ]);
+gulp.task('build', (callback) => {
+  return runSequence(
+    'bundle:js',
+    callback
+  );
 });
