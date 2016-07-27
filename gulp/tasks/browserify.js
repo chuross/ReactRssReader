@@ -6,7 +6,7 @@ import config from '../config'
 
 gulp.task('bundle:js', () => {
   browserify(config.browserify.root)
-    .transform(babelify)
+    .transform(babelify, { presets: ['react'] })
     .bundle()
     .pipe(source('bundle.js'))
     .pipe(gulp.dest(config.common.js));

@@ -1,9 +1,9 @@
-import { Component } from 'react'
+import React, { Component } from 'react'
 
 export default class Top extends Component {
-  render(): {
+  render() {
     return (
-      <div>Hello world!</div>
+      <h1>Hello world!</h1>
     );
   }
 }
