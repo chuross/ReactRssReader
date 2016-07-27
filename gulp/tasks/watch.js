@@ -5,11 +5,17 @@ import config from '../config'
 
 requireDir('./');
 
-gulp.task('watch', ['default', 'browserSync'], () => {
-  gulp.watch(`${config.common.src}/**/*.js`, [
-    'bundle:js'
-  ]);
-  gulp.watch(`${config.common.src}/**`, [
-    'browserSync-reload'
-  ]);
+gulp.task('watch', (callback) => {
+  return runSequence(
+    'default',
+    'browserSync',
+    () => {
+      gulp.watch(`${config.common.src}/**/*.js`, [
+        'bundle:js'
+      ]);
+      gulp.watch(`${config.common.src}/**`, [
+        'browserSync-reload'
+      ]);
+    }
+  );
 });
