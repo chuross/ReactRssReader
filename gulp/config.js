@@ -5,6 +5,6 @@ export default {
     js: './public/js'
   },
   browserify: {
-    root: './src/js/view/App.js'
+    root: './src/js/ui/view/App.js'
   }
 };
