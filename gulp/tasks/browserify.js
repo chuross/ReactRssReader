@@ -11,7 +11,9 @@ const jsRoot = path.resolve(config.common.src, './js');
 
 gulp.task('bundle:js', () => {
   browserify(config.browserify.root, { paths: ['./node_modules', jsRoot] })
-    .transform(babelify, { presets: ['es2015', 'react'] })
+    .transform(babelify, {
+       presets: ['es2015', 'react']
+     })
     .bundle()
     .on('error', notify.onError((error) => `${error.message}`))
     .pipe(plumber())
