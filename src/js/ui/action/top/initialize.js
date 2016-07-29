@@ -1,5 +1,9 @@
 import { createAction } from 'redux-actions'
 
-export function request() { return createAction('INITIALIZE_REQUEST'); }
-export function success() { return createAction('INITIALIZE_SUCCESS'); }
-export function failure() { return createAction('INITIALIZE_FAILURE'); }
+export const request = createAction('INITIALIZE_REQUEST');
+export const success = createAction('INITIALIZE_SUCCESS', (entries = []) => {
+  return {
+    entries: entries
+  };
+});
+export const failure = createAction('INITIALIZE_FAILURE');

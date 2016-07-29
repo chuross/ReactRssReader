@@ -1,15 +1,20 @@
 import React, { Component, PropTypes } from 'react'
 import { connect } from 'react-redux'
+import { bindActionCreators } from 'redux'
 import * as initActions from 'ui/action/top/initialize'
 
 class Main extends Component {
+  constructor(props) {
+    super(props);
+  }
+
   componentDidMount() {
-    this.props.actions.initialize.request();
+    this.props.initActions.request();
   }
 
   render() {
     return (
-      <div>main {new Boolean(this.props.isInitialized).toString()}</div>
+      <div>main</div>
     );
   }
 }
@@ -19,19 +24,13 @@ Main.proptypes = {
   entries: PropTypes.array.isRequired
 }
 
-Main.defaultProps = {
-  inInitialized: false,
-  entries: []
-}
-
 export default connect(state => {
   return {
-    isInitialized: state.isInitialized
-  }
+    isInitialized: state.isInitialized,
+    entries: state.entries
+  };
 }, dispatch => {
   return {
-    actions: {
-      initialize: initActions
-    }
-  }
+    initActions: bindActionCreators(initActions, dispatch)
+  };
 })(Main);

@@ -1,4 +1,4 @@
-import { handleActions } from 'redux-actions'
+import { handleActions, handleAction } from 'redux-actions'
 import { request, success, failure } from 'ui/action/top/initialize'
 
 const defaultState = {
@@ -12,13 +12,13 @@ export default function initialize(state = defaultState, action) {
       return {
         isInitialized: false,
         entries: []
-      }
+      };
     },
     [success]: (state, action) => {
       return {
         isInitialized: true,
         entries: action.payload.entries
-      }
+      };
     }
-  }, defaultState);
+  }, state)(state, action);
 }
