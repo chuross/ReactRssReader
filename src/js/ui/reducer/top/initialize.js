@@ -20,5 +20,5 @@ export default function initialize(state = defaultState, action) {
         entries: action.payload.entries
       };
     }
-  }, state)(state, action);
+  }, defaultState)(state, action);
 }

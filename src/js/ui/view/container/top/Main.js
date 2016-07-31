@@ -4,10 +4,6 @@ import { bindActionCreators } from 'redux'
 import * as initActions from 'ui/action/top/initialize'
 
 class Main extends Component {
-  constructor(props) {
-    super(props);
-  }
-
   componentDidMount() {
     this.props.initActions.request();
   }
@@ -26,8 +22,8 @@ Main.proptypes = {
 
 export default connect(state => {
   return {
-    isInitialized: state.isInitialized,
-    entries: state.entries
+    isInitialized: state.initialize.isInitialized || false,
+    entries: state.initialize.entries || []
   };
 }, dispatch => {
   return {
