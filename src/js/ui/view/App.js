@@ -6,11 +6,12 @@ import { createStore, applyMiddleware } from 'redux'
 import thunk from 'redux-thunk'
 import reducer from 'ui/reducer/app'
 import routes from 'ui/view/Routes'
+import Top from 'ui/view/page/Top'
 
 const store = createStore(reducer, applyMiddleware(thunk));
 
 ReactDom.render(
   <Provider store={store}>
-    <Router history={browserHistory} routes={routes} />
+    <Top />
   </Provider>
 , document.getElementById('app'));
