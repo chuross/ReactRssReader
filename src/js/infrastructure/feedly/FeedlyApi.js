@@ -1,6 +1,6 @@
 import Fetch from 'infrastructure/api/Fetch'
 
-const baseUrl = 'http://cloud.feedly.com/v3';
+const baseUrl = 'https://cloud.feedly.com/v3';
 
 export default class FeedlyApi {
   static getEntries(blogId, count = 10, locale = 'ja') {
