@@ -28199,7 +28199,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-var baseUrl = 'http://cloud.feedly.com/v3';
+var baseUrl = 'https://cloud.feedly.com/v3';
 
 var FeedlyApi = function () {
   function FeedlyApi() {
