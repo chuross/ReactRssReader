@@ -5,12 +5,16 @@ import * as initActions from 'ui/action/top/initialize'
 
 class Main extends Component {
   componentDidMount() {
-    this.props.initActions.request();
+    this.props.initActions.execute();
   }
 
   render() {
     return (
-      <div>main</div>
+      <div>
+        <ul>
+          {this.props.entries.map(entry => <li>{entry.title}</li>)}
+        </ul>
+      </div>
     );
   }
 }
