@@ -1,14 +1,5 @@
 import fetch from 'isomorphic-fetch'
 
-const convert = response => {
-  switch (response.headers.get('content-type')) {
-    case 'application/json':
-      return response.json();
-    default:
-      return response.text();
-  }
-}
-
 export default class Fetch {
   static get(url, params = {}, headers = {}) {
     const query = this.buildQuery(params);
@@ -17,7 +8,7 @@ export default class Fetch {
     return fetch(target, {
       method: 'GET',
       headers: new Headers(headers)
-    }).then(this.convert);
+    });
   }
 
   static buildQuery(params = {}) {

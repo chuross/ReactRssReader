@@ -12,7 +12,7 @@ class Main extends Component {
     return (
       <div>
         <ul>
-          {this.props.entries.map(entry => <li>{entry.title}</li>)}
+          {this.props.entries.map(entry => <li key={entry.id}>{entry.title}</li>)}
         </ul>
       </div>
     );
