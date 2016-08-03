@@ -7,7 +7,6 @@ const defaultState = {
 };
 
 export default function initialize(state = defaultState, action) {
-  console.log(action);
   return handleActions({
     [request]: (state, action) => {
       return {
