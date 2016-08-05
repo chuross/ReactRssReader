@@ -16,7 +16,7 @@ export default class FeedlyApi {
     })
     .then(this.isSuccess)
     .then(result => result.json())
-    .then(data => data.items);
+    .then(data => data.results);
   }
 
   static getEntries(feedId, count = 10, locale = 'ja') {
@@ -27,6 +27,6 @@ export default class FeedlyApi {
       })
       .then(this.isSuccess)
       .then(result => result.json())
-      .then(data => data.results);
+      .then(data => data.items);
   }
 }

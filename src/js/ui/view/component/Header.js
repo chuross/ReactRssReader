@@ -1,13 +1,10 @@
 import React, { Component } from 'react'
-import HeaderMenu from 'ui/view/component/HeaderMenu'
+import { AppBar } from 'material-ui';
 
 export default class Header extends Component {
   render() {
     return (
-      <header>
-        <h1>Reactで作ったRSSリーダー</h1>
-        <HeaderMenu />
-      </header>
+      <AppBar title='Reactで作った適当なRSSリーダー' />
     );
   }
 }
