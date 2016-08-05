@@ -1,6 +1,6 @@
 import Fetch from 'infrastructure/api/Fetch'
 
-const baseUrl = 'http://cloud.feedly.com/v3';
+const baseUrl = 'https://bosatsu.arukascloud.io/feedly';
 
 const isSuccess = result => {
   if (!result.ok) throw new Error('status not ok');
