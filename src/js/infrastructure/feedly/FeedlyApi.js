@@ -8,14 +8,25 @@ const isSuccess = result => {
 }
 
 export default class FeedlyApi {
-  static getEntries(blogId, count = 10, locale = 'ja') {
+  static getFeeds(query, count = 10, locale = 'ja') {
+    return Fetch.get(`${baseUrl}/search/feeds`, {
+      query: query,
+      count: count,
+      locale: locale
+    })
+    .then(this.isSuccess)
+    .then(result => result.json())
+    .then(data => data.items);
+  }
+
+  static getEntries(feedId, count = 10, locale = 'ja') {
     return Fetch.get(`${baseUrl}/mixes/contents`, {
-        streamId: blogId,
+        streamId: feedId,
         count: count,
         locale: locale
       })
       .then(this.isSuccess)
       .then(result => result.json())
-      .then(data => data.items);
+      .then(data => data.results);
   }
 }
