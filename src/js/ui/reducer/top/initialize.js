@@ -3,22 +3,16 @@ import { request, success, failure } from 'ui/action/top/initialize'
 
 const defaultState = {
   isInitialized: false,
-  entries: []
+  feeds: []
 };
 
 export default function initialize(state = defaultState, action) {
   return handleActions({
     [request]: (state, action) => {
-      return {
-        isInitialized: false,
-        entries: []
-      };
+      return defaultState;
     },
     [success]: (state, action) => {
-      return {
-        isInitialized: true,
-        entries: action.payload.entries
-      };
+      return { isInitialized: true, feeds: action.payload.feeds };
     }
   }, defaultState)(state, action);
 }

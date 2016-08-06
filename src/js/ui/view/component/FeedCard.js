@@ -6,14 +6,14 @@ import { List, ListItem } from 'material-ui/List'
 //   entries: PropTypes.array.isRequired
 // };
 
-export default class EntryCard extends Component {
+export default class FeedCard extends Component {
+  // defaultProps = { feeds: [] };
+
   render() {
+    const { feed } = this.props;
     return (
       <Card>
-          <CardHeader title='test' />
-          <List>
-            {this.props.entries.map(entry => <ListItem key={entry.id} primaryText={entry.title} href={entry.originId} />)}
-          </List>
+          <CardHeader title={feed != null ? feed.title : '無題'} />
       </Card>
     );
   }
