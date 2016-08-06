@@ -11,8 +11,9 @@ export default class FeedCard extends Component {
 
   render() {
     const { feed } = this.props;
+    const margin = {margin: '20px 60px'};
     return (
-      <Card>
+      <Card style={margin}>
           <CardHeader title={feed != null ? feed.title : '無題'} subtitle={feed.website} />
       </Card>
     );
