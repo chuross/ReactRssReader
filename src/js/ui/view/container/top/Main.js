@@ -12,7 +12,7 @@ export default class Main extends Component {
 
   render() {
     let { isInitialized, feeds } = this.props;
-    let component = isInitialized ? feeds.map(feed => <FeedCard feed={feed} />) : <CircularProgress />;
+    let component = isInitialized ? feeds.map(feed => <FeedCard key={feed.id} feed={feed} />) : <CircularProgress />;
     return (
       <div>{component}</div>
     );

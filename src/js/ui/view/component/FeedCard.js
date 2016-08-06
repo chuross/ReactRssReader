@@ -13,7 +13,7 @@ export default class FeedCard extends Component {
     const { feed } = this.props;
     return (
       <Card>
-          <CardHeader title={feed != null ? feed.title : '無題'} />
+          <CardHeader title={feed != null ? feed.title : '無題'} subtitle={feed.website} />
       </Card>
     );
   }
