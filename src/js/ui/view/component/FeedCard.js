@@ -15,6 +15,9 @@ export default class FeedCard extends Component {
     return (
       <Card style={margin}>
           <CardHeader title={feed != null ? feed.title : '無題'} subtitle={feed.website} />
+          <List>
+            {feed.entries.map(entry => <ListItem key={entry.id} primaryText={entry.title} />)}
+          </List>
       </Card>
     );
   }

@@ -9,11 +9,26 @@ export const success = createAction('INITIALIZE_SUCCESS', (feeds = []) => {
 
 export const failure = createAction('INITIALIZE_FAILURE');
 
-export function execute() {
+export function execute(query) {
   return (dispatch, getState) => {
     dispatch(request());
-    return FeedlyApi.getFeeds('Overwatch')
-      .then(feeds => dispatch(success(feeds)))
-      .catch(err => dispatch(failure(err)));
+    return FeedlyApi.getFeeds(query)
+      .then(feeds => {
+        return Promise.all([
+          Promise.resolve(feeds),
+          ...feeds.map(feed => FeedlyApi.getEntries(feed.feedId))
+        ]);
+      })
+      .then(result => {
+        const feeds = result[0];
+        const entryList = result.slice(1);
+        dispatch(success(entryList.map((entries, index) => {
+          feeds[index].entries = entries;
+          return feeds[index];
+        })));
+      })
+      .catch(err => {
+        dispatch(failure(err));
+      });
   }
 }

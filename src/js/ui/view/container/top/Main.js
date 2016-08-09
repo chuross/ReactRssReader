@@ -7,12 +7,12 @@ import FeedCard from 'ui/view/component/FeedCard'
 
 export default class Main extends Component {
   componentDidMount() {
-    this.props.execute();
+    this.props.execute('Overwatch');
   }
 
   render() {
     let { isInitialized, feeds } = this.props;
-    let component = isInitialized ? feeds.map(feed => <FeedCard key={feed.id} feed={feed} />) : <CircularProgress />;
+    let component = isInitialized ? feeds.map(feed => <FeedCard key={feed.feedId} feed={feed} />) : <CircularProgress />;
     return (
       <div>{component}</div>
     );
